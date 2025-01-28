@@ -33,9 +33,10 @@ class StorageJson(IStorage):
         self.write_movies(new_movie)
 
 
-    def add_movie(self, title, year, rating):
+    def add_movie(self, dict):
         movies = self.movies
-        movies[title] = {'year': year, 'rating': rating}
+        movies.update(dict)
+        #movies[title] = {'year': year, 'rating': rating}
         self.movies = movies
 
 

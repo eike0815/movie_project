@@ -5,7 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e3ca794-ee51-4a03-9241-19e23ad690d7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/movie_app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage_csv.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/movie_app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/movie_data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie_storage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage_json.py" beforeDir="false" afterPath="$PROJECT_DIR$/storage_json.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testings.py" beforeDir="false" afterPath="$PROJECT_DIR$/testings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +34,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python.istorage.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.movie_app.executor": "Run",
     "Python.storage_json.executor": "Run",
     "Python.testings.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -50,16 +59,5 @@
       <updated>1737710460168</updated>
     </task>
     <servers />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/testings.py</url>
-          <line>5</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

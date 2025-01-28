@@ -1,5 +1,4 @@
 import random
-import movie_storage
 from statistics import median, mean
 from storage_json import StorageJson
 
@@ -24,7 +23,7 @@ class MovieApp:
         while len(key) == 0:
             print("the namen of the movie can´t be empty")
             key = input("enter the movies name: ")
-        while key in movie_storage.get_movies():
+        while key in self._storage.movies:
             print("Movie already exists. Add another title.")
             key = input("enter the movies name: ")
         bad_input = True
@@ -47,7 +46,7 @@ class MovieApp:
                     year = int(input("enter the movies year: "))
                 movi_stats["year"] = year
                 movie_dict[key] = movi_stats
-                movie_storage.add_movie(movie_dict)
+                self._storage.add_movie(movie_dict)
                 bad_input = False
             except ValueError:
                 print("this is not a valid number")
@@ -60,10 +59,10 @@ class MovieApp:
         movie_dict dictionary that looks like this {'title':{'rating':float , 'year' : int}, ...}
         """
         key = input("Enter movie name to delete: ")
-        while key not in movie_storage.get_movies():
+        while key not in self._storage.movies:
             print("Movie is not found, enter valid film-name")
             key = input("Enter movie name to delete: ")
-        movie_storage.delete_movie(key)
+        self._storage.delete_movie(key)
         print(f" Movie {key} successfully deleted")
         return
 
@@ -74,11 +73,11 @@ class MovieApp:
         by entering the name of the movie and afterward the new rating.
         """
         key = input("Enter movie name: ")
-        while key not in movie_storage.get_movies():
+        while key not in self._storage.movies:
             print("Movie is not found, enter valid film-name or add the film you want")
             key = input("Enter movie name: ")
         value = float(input("Enter new movie rating (0-10): "))
-        movie_storage.update_movie(key, value)
+        self._storage.update_movie(key, value)
         print(f" Movie {key} successfully updated")
         return
 
@@ -89,7 +88,7 @@ class MovieApp:
         if there are multiple entries with the same lowest or highest rating,
         the function lists them all. the maximum and minimum rating
         """
-        movie_dict = movie_storage.get_movies()
+        movie_dict = self._storage.movies
         rating_dict = {}
         for movie in movie_dict:
             rating_dict[movie] = movie_dict[movie]['rating']
@@ -111,7 +110,7 @@ class MovieApp:
         the function pics a random entry of the given json-file ({'title':{'rating':float , 'year' : int}, ...})
         and prints the title plus its rating
         """
-        movie_dict = movie_storage.get_movies()
+        movie_dict = self._storage.movies
         film = random.choice(list(movie_dict))
         rating = movie_dict[film]['rating']
         print(f"Your movie for tonight: {film}, it's rated {rating}")
@@ -128,7 +127,7 @@ class MovieApp:
         """
         result = "None"
         title = input("Enter part of movie name: ").lower()
-        dict_movies = movie_storage.get_movies()
+        dict_movies = self._storage.movies
         for key in dict_movies:
             if title in key.lower():
                 result = key
@@ -138,8 +137,40 @@ class MovieApp:
     def _generate_website(self):
         ...
 
+    def menu(self):
+        """
+        this function prints the menu the user is choosing from.
+        """
+        print("Menu: \n"
+              " 0. Exit \n 1. List movies \n 2. Add movie \n 3. Delete movie \n 4. Update movie"
+              "\n 5. Stats \n 6. Random movie \n 7. Search movie \n 8. Movies sorted by rating")
+        return
+
     def run(self):
-        pass
+        print("********** My Movies Database **********")
+        while True:
+            self.menu()
+            text = int(input(" Enter choice (0-8): "))
+            if text == 0:
+                print("Bye!")
+                break
+            if text == 1:
+                self._command_list_movies()
+            elif text == 2:
+                self._command_add_movie()
+            elif text == 3:
+                self._command_delete_movie()
+            elif text == 4:
+                self._command_update_movie()
+            elif text == 5:
+                self._command_movie_stats()
+            elif text == 6:
+                self._command_random_movie()
+            elif text == 7:
+                self._command_search_movie()
+            elif text == 8:
+                self._command_search_movie()
+                go_on = input("press enter to continue")
 # Print menu
     # Get use command
     # Execute command
