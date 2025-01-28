@@ -43,9 +43,6 @@ class StorageJson(IStorage):
         movies = self.movies
         del movies[title]
         self.movies = movies
-    def update_movie(self, title, rating):
-        pass
-
 
     def update_movie(self, title, rating):
         """
