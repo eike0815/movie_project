@@ -1,4 +1,5 @@
 import random
+import api_film_fetch as aff
 from statistics import median, mean
 from storage_json import StorageJson
 
@@ -6,7 +7,7 @@ class MovieApp:
     def __init__(self, storage):
         self._storage = storage
 
-
+#aff.fetch_data(key)
 
     def _command_list_movies(self):
         movie = self._storage.list_movies()
@@ -19,9 +20,11 @@ class MovieApp:
         """
         movie_dict = {}
         movi_stats = {}
-        key = input("enter the movies name: ")
+        title = input("enter the movies name: ")
+        key = aff.fetch_data(title)['Title']
+        print(aff.fetch_data(title))
         while len(key) == 0:
-            print("the namen of the movie can´t be empty")
+            print("the name of the movie can´t be empty")
             key = input("enter the movies name: ")
         while key in self._storage.movies:
             print("Movie already exists. Add another title.")
@@ -29,10 +32,8 @@ class MovieApp:
         bad_input = True
         while bad_input:
             try:
-                rating = float(input("enter the movies rating: "))
-                while 0 > rating or rating > 10:
-                    print("the rating is not valid. pleas enter a valid rating between 0 and 10")
-                    rating = float(input("enter the movies rating: "))
+                rating = aff.fetch_data(key)['Rated']
+
                 movi_stats["rating"] = rating
                 bad_input = False
             except ValueError:
@@ -40,10 +41,7 @@ class MovieApp:
         bad_input = True
         while bad_input:
             try:
-                year = int(input("enter the movies year: "))
-                while 1888 > year or year > 2025:
-                    print("the year is not valid. pleas enter a valid year")
-                    year = int(input("enter the movies year: "))
+                year = aff.fetch_data(key)['Year']
                 movi_stats["year"] = year
                 movie_dict[key] = movi_stats
                 self._storage.add_movie(movie_dict)

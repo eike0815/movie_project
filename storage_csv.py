@@ -4,9 +4,13 @@ import json
 
 class StorageCSV(IStorage):
     def __init__(self, file_path):
+        """
+        the function initiates the class.
+        it rather checks if the filepath is already existing and,
+        if not, writes a new one.
+        """
         self.file_path = file_path
         try:
-            # Prüfen, ob die Datei existiert, ansonsten erstellen
             with open(self.file_path, 'r') as file:
                 pass
         except FileNotFoundError:
@@ -64,7 +68,7 @@ class StorageCSV(IStorage):
         self.write_movies(movies)
 
 # Beispiel der Nutzung:
-# storage = StorageCSV('movies.csv')
-# storage.add_movie({'Inception': {'year': '2010', 'rating': '8.8'}})
-# storage.list_movies()
+storage = StorageCSV('movies.csv')
+storage.add_movie({'Inception': {'year': '2010', 'rating': '8.8'}})
+storage.list_movies()
 # storage.import_json('movies.json')
