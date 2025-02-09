@@ -4,6 +4,11 @@ import json
 
 class StorageJson(IStorage):
     def __init__(self, file_path):
+        """
+        the function initiates the class.
+        it rather checks if the filepath is already existing and,
+        if not, writes a new one.
+        """
         self.file_path = file_path
         try:
             with open(f'{self.file_path}', 'r') as file:
@@ -13,10 +18,16 @@ class StorageJson(IStorage):
                 return
 
     def write_movies(self, movies):
+        """
+        this function writes movies  to actualise the existing json.
+        """
         with open(f"{self.file_path}", 'w') as file:
             json.dump(movies, file)
 
     def list_movies(self):
+        """
+        this function lists all movies from the storage.
+        """
         with open(f'{self.file_path}', 'r') as file:
             movie_dict =  json.load(file)
             for key, value in movie_dict.items():
@@ -25,11 +36,17 @@ class StorageJson(IStorage):
 
     @property
     def movies(self):
+        """
+        this function loads the storage.
+        """
         with open(f'{self.file_path}', 'r') as file:
             return json.load(file)
 
     @movies.setter
     def movies(self, new_movie):
+        """
+        this function writes a new movie into the existing storage by using the function write_movie
+        """
         self.write_movies(new_movie)
 
 

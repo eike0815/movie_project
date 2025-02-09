@@ -19,6 +19,9 @@ class StorageCSV(IStorage):
                 writer.writerow(['title', 'year', 'rating'])  # Kopfzeile für CSV-Datei
 
     def write_movies(self, movies):
+        """
+        this function writes movies  to actualise the existing json.
+        """
         with open(self.file_path, 'w', newline='') as file:
             writer = csv.writer(file)
             writer.writerow(['title', 'year', 'rating'])
@@ -26,6 +29,9 @@ class StorageCSV(IStorage):
                 writer.writerow([title, details['year'], details['rating']])
 
     def list_movies(self):
+        """
+        this function lists all movies from the storage.
+        """
         with open(self.file_path, 'r') as file:
             reader = csv.DictReader(file)
             for row in reader:
@@ -42,6 +48,9 @@ class StorageCSV(IStorage):
 
     @movies.setter
     def movies(self, new_movie):
+        """
+        this function writes a new movie into the existing storage by using the function write_movie
+        """
         self.write_movies(new_movie)
 
     def add_movie(self, movie_dict):

@@ -1,6 +1,7 @@
 import random
 import api_film_fetch as aff
 from statistics import median, mean
+import build_website
 from storage_json import StorageJson
 
 class MovieApp:
@@ -32,8 +33,7 @@ class MovieApp:
         bad_input = True
         while bad_input:
             try:
-                rating = aff.fetch_data(key)['Rated']
-
+                rating = aff.fetch_data(key)['imdbRating']
                 movi_stats["rating"] = rating
                 bad_input = False
             except ValueError:
@@ -43,6 +43,16 @@ class MovieApp:
             try:
                 year = aff.fetch_data(key)['Year']
                 movi_stats["year"] = year
+                movie_dict[key] = movi_stats
+                self._storage.add_movie(movie_dict)
+                bad_input = False
+            except ValueError:
+                print("this is not a valid number")
+        bad_input = True
+        while bad_input:
+            try:
+                poster = aff.fetch_data(key)['Poster']
+                movi_stats["poster"] = poster
                 movie_dict[key] = movi_stats
                 self._storage.add_movie(movie_dict)
                 bad_input = False
@@ -141,7 +151,7 @@ class MovieApp:
         """
         print("Menu: \n"
               " 0. Exit \n 1. List movies \n 2. Add movie \n 3. Delete movie \n 4. Update movie"
-              "\n 5. Stats \n 6. Random movie \n 7. Search movie \n 8. Movies sorted by rating")
+              "\n 5. Stats \n 6. Random movie \n 7. Search movie \n 8. Movies sorted by rating \n 9. Make a website")
         return
 
     def run(self):
@@ -168,6 +178,8 @@ class MovieApp:
                 self._command_search_movie()
             elif text == 8:
                 self._command_search_movie()
+            elif text == 9:
+                build_website.make_it_html()
                 go_on = input("press enter to continue")
 # Print menu
     # Get use command
