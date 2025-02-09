@@ -26,10 +26,6 @@ def seralize_movie(obj):
     return output
 
 
-"""movie_dict = json.load(file)
-for key, value in movie_dict.items():
-    print(f"{key}: {value['rating']} {value['year']}")
-    print(key)"""
 def building_all_cards(cards):
     """here we add together all film cards to on file"""
     output = ""
@@ -47,7 +43,10 @@ def bring_movies_to_html(list_of_cards):
         return "_static/movie_template.html"
 
 def make_it_html():
+    """
+    this function coordinates the order of the function needed to bild the html
+    """
     movie_list = load_data('movie_data.json')
     movie_on_card = building_all_cards(movie_list)
-    final_result = bring_movies_to_html(movie_on_card)
+    bring_movies_to_html(movie_on_card)
 

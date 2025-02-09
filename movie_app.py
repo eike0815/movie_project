@@ -8,11 +8,11 @@ class MovieApp:
     def __init__(self, storage):
         self._storage = storage
 
-#aff.fetch_data(key)
 
     def _command_list_movies(self):
         movie = self._storage.list_movies()
-        ...
+
+
     def _command_add_movie(self):
         """
         the function adds a new entry to a dictionary (movie_dict ({'title':{'rating':float , 'year' : int}, ...}))

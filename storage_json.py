@@ -51,13 +51,19 @@ class StorageJson(IStorage):
 
 
     def add_movie(self, dict):
+        """
+        this function adds a movie
+
+        """
         movies = self.movies
         movies.update(dict)
-        #movies[title] = {'year': year, 'rating': rating}
         self.movies = movies
 
 
     def delete_movie(self, title):
+        """
+        this function deletes a movie by its title
+        """
         movies = self.movies
         del movies[title]
         self.movies = movies

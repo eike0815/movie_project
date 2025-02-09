@@ -15,12 +15,11 @@ def fetch_data(film_title):
     req =requests.get(url, headers = headers)
     return req.json()
 
-#print(fetch_data("the joker"))
-#print('hihi')
-#fetch_data("the joker")['Search'][0]#this is here for testing
-
+"""
+this was just for testing:
 Title = fetch_data("the joker")['Title']
 Year = fetch_data("the joker")['Year']
 Rated = fetch_data("the joker")['imdbRating']
 poster = fetch_data("the joker")['Poster']
+"""
 
