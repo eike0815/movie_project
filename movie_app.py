@@ -2,7 +2,7 @@ import random
 import api_film_fetch as aff
 from statistics import median, mean
 import build_website
-from storage_json import StorageJson
+
 
 class MovieApp:
     def __init__(self, storage):
@@ -99,7 +99,7 @@ class MovieApp:
         movie_dict = self._storage.movies
         rating_dict = {}
         for movie in movie_dict:
-            rating_dict[movie] = movie_dict[movie]['rating']
+            rating_dict[movie] = float(movie_dict[movie]['rating'])
         print(f" Avarage rating is: {round(mean(rating_dict.values()), 2)}")
         print(f" Median rating is: {round(median(rating_dict.values()), 2)}")
         temp = max(rating_dict.values())
@@ -181,6 +181,3 @@ class MovieApp:
             elif text == 9:
                 build_website.make_it_html()
                 go_on = input("press enter to continue")
-# Print menu
-    # Get use command
-    # Execute command

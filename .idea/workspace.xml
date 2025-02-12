@@ -5,16 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e3ca794-ee51-4a03-9241-19e23ad690d7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/_static/index_template.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_static/movie_template.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_static/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build_website.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/movie_data.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requierments.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api_film_fetch.py" beforeDir="false" afterPath="$PROJECT_DIR$/api_film_fetch.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/movie_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/movie_app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/movie_data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage_csv.py" beforeDir="false" afterPath="$PROJECT_DIR$/storage_csv.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage_json.py" beforeDir="false" afterPath="$PROJECT_DIR$/storage_json.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movies.json" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,13 +40,14 @@
     "Python.storage_json.executor": "Run",
     "Python.testings.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master"
   }
 }]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-6a3326d57233-c546a90a8094-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-242.24807.21" />
+        <option value="bundled-python-sdk-a5bc9544c897-aa17d162503b-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-243.23654.177" />
       </set>
     </attachedChunks>
   </component>
@@ -70,7 +67,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/build_website.py</url>
-          <line>36</line>
+          <line>32</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">

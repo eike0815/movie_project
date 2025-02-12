@@ -1,5 +1,5 @@
 import csv
-from istorage import IStorage
+from storage.istorage import IStorage
 import json
 
 class StorageCSV(IStorage):
@@ -77,7 +77,7 @@ class StorageCSV(IStorage):
         self.write_movies(movies)
 
 # Beispiel der Nutzung:
-storage = StorageCSV('movies.csv')
+storage = StorageCSV('../movies.csv')
 storage.add_movie({'Inception': {'year': '2010', 'rating': '8.8'}})
 storage.list_movies()
 # storage.import_json('movies.json')

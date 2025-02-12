@@ -1,7 +1,5 @@
-
-import movie_app
 from movie_app import MovieApp
-from storage_json import StorageJson
+from storage.storage_json import StorageJson
 
 storage = StorageJson('movie_data.json')
 movie_app = MovieApp(storage)
